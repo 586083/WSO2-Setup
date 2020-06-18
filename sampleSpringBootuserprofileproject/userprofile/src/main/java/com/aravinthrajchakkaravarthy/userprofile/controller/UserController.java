@@ -32,12 +32,14 @@ public class UserController {
 	@ApiOperation(value = "View a list of available Users")
 	@GetMapping(value = "/fecthUserProfile")
 	public List<User> fetchUserProfile(){
+		System.out.println("I am inside fetchUserProfile");
 		return userService.fetchUserProfile();
 	}
 	
 	@ApiOperation(value = "View a list of available Users by query with user Name")
 	@GetMapping(value = "/fecthUserProfileName")
-	public List<User> fetchUserProfileName(@RequestParam String name){
+	public List<User> fetchUserProfileName(@RequestParam String name) throws InterruptedException{
+		System.out.println("I am inside fetchUserProfileName");
 		return userService.fetchUserProfileByName(name);
 	}
 	
